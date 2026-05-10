@@ -43,7 +43,7 @@ export default function TestimonialCard({ client }: TestimonialCardProps) {
               <p className="text-[15px] font-medium text-[#1D1D1F] dark:text-white">
                 {client.testimonial.name}
               </p>
-              <p className="text-[13px] text-[#86868B] dark:text-white/40">
+              <p className="text-[13px] text-[#475569] dark:text-white/72">
                 {client.testimonial.role}
               </p>
             </div>

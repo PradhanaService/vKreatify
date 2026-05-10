@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import type { Client } from "../../data/clients";
+import { SplitReveal } from "../MotionPrimitives";
 
 type ProcessStepsProps = {
   client: Client;
@@ -13,23 +14,23 @@ function getProcessTheme(client: Client) {
     case "noize":
       return {
         section: "bg-[#0D0D0D] text-white",
-        border: "border-white/10",
-        number: "text-white/25",
-        body: "text-white/52",
+        border: "border-white/18",
+        number: "text-white/62",
+        body: "text-white/82",
       };
     case "tattoo-collective":
       return {
         section: "bg-[#1C1C1C] text-[#E8D5B7]",
-        border: "border-[#E8D5B7]/12",
-        number: "text-[#E8D5B7]/28",
-        body: "text-[#E8D5B7]/52",
+        border: "border-[#E8D5B7]/24",
+        number: "text-[#E8D5B7]/68",
+        body: "text-[#E8D5B7]/84",
       };
     default:
       return {
         section: "bg-[#0D0D0D] text-white",
-        border: "border-white/10",
-        number: "text-white/25",
-        body: "text-white/52",
+        border: "border-white/18",
+        number: "text-white/62",
+        body: "text-white/82",
       };
   }
 }
@@ -42,18 +43,23 @@ export default function ProcessSteps({ client }: ProcessStepsProps) {
   return (
     <section className={`${theme.section} px-[5vw] py-[120px]`}>
       <div ref={ref}>
-        <h2 className="mb-20 text-[clamp(40px,5vw,72px)] font-[200] tracking-[-0.03em]">
+        <SplitReveal as="h2" className="mb-20 text-[clamp(40px,5vw,72px)] font-[200] tracking-[-0.03em]">
           {client.processHeading}
-        </h2>
+        </SplitReveal>
 
         <div>
           {client.process.map((step, index) => (
             <motion.div
               key={step.number}
-              initial={false}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-              className={`grid gap-5 border-t py-10 md:grid-cols-[100px_1fr] lg:grid-cols-[100px_1fr_400px] lg:items-start ${theme.border}`}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -120 : 120, scale: 0.94, filter: "blur(12px)" }}
+              animate={
+                isInView
+                  ? { opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }
+                  : { opacity: 0, x: index % 2 === 0 ? -120 : 120, scale: 0.94, filter: "blur(12px)" }
+              }
+              whileHover={{ x: 18, backgroundColor: "rgba(255,255,255,0.08)" }}
+              transition={{ duration: 0.85, delay: index * 0.14, ease: [0.16, 1, 0.3, 1] }}
+              className={`grid gap-5 border-t px-3 py-10 md:grid-cols-[100px_1fr] lg:grid-cols-[100px_1fr_400px] lg:items-start ${theme.border}`}
             >
               <div className={`text-[11px] tracking-[0.1em] ${theme.number}`}>{step.number}</div>
               <div className="text-[24px] font-[300] tracking-[-0.02em]">{step.title}</div>

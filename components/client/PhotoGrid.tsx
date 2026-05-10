@@ -19,11 +19,11 @@ function sectionClass(client: Client) {
 function mutedClass(client: Client) {
   switch (client.slug) {
     case "noize":
-      return "text-white/40";
+      return "text-white/76";
     case "tattoo-collective":
-      return "text-[#E8D5B7]/40";
+      return "text-[#E8D5B7]/76";
     default:
-      return "text-[#86868B]";
+      return "text-[#475569]";
   }
 }
 

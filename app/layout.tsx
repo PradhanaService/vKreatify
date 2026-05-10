@@ -1,5 +1,6 @@
 import MoodCursor from "../components/MoodCursor";
 import PageTransition from "../components/PageTransition";
+import SiteIntroLoader from "../components/SiteIntroLoader";
 import ThemeToggle from "../components/ThemeToggle";
 import type { Metadata } from "next";
 import SmoothScroll from "../components/SmoothScroll";
@@ -46,6 +47,7 @@ export default function RootLayout({
         <ThemeProvider>
           <CursorProvider>
             <SmoothScroll />
+            <SiteIntroLoader />
             <MoodCursor />
             <ThemeToggle />
             <PageTransition>{children}</PageTransition>

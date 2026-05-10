@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useThemeContext } from "../context/ThemeContext";
+import { Magnetic } from "./MotionPrimitives";
 
 const navItems = [
   { label: "Hall of Fame", href: "#hall-of-fame", id: "hall-of-fame" },
@@ -140,11 +141,8 @@ export default function Navbar() {
           </div>
 
           <div className="mr-6 flex items-center lg:mr-10">
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="mr-[96px] hidden md:block lg:mr-[104px]"
-            >
+            <Magnetic className="mr-[96px] hidden md:block lg:mr-[104px]" strength={0.18}>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-[980px] bg-[#1D1D1F] px-5 py-2 text-[14px] font-medium tracking-[-0.01em] text-white shadow-[0_6px_18px_rgba(0,0,0,0.12)] transition-all duration-200 hover:bg-[#3D3D3F] dark:bg-white dark:text-[#1D1D1F] dark:shadow-[0_6px_18px_rgba(255,255,255,0.08)] dark:hover:bg-[#F5F5F7]"
@@ -154,7 +152,8 @@ export default function Navbar() {
                 </span>
                 <span>Start Project &rarr;</span>
               </Link>
-            </motion.div>
+              </motion.div>
+            </Magnetic>
 
             <button
               type="button"

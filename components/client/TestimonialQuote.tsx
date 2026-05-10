@@ -19,6 +19,15 @@ function sectionTheme(client: Client) {
   }
 }
 
+function roleClass(client: Client) {
+  switch (client.slug) {
+    case "tattoo-collective":
+      return "text-white/76";
+    default:
+      return "text-[#4B5563] dark:text-white/76";
+  }
+}
+
 export default function TestimonialQuote({ client }: TestimonialQuoteProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -50,7 +59,7 @@ export default function TestimonialQuote({ client }: TestimonialQuoteProps) {
           </div>
           <div className="text-left">
             <p className="text-[15px] font-[500]">{client.testimonial.name}</p>
-            <p className="text-[13px] text-[#86868B] dark:text-white/40">{client.testimonial.role}</p>
+            <p className={`text-[13px] ${roleClass(client)}`}>{client.testimonial.role}</p>
           </div>
         </div>
       </motion.div>

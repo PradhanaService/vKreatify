@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { Reveal } from "./MotionPrimitives";
 
 function useCounter(end: number, duration: number = 2000) {
   const [count, setCount] = useState(0);
@@ -50,9 +51,9 @@ function StatBlock({ stat, index }: { stat: StatItem; index: number }) {
   return (
     <motion.div
       ref={ref}
-      initial={false}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{ duration: 0.75, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
       className="flex flex-col justify-center"
     >
       <div className="mb-8 h-px w-full bg-black/5 dark:bg-white/10">
@@ -66,7 +67,7 @@ function StatBlock({ stat, index }: { stat: StatItem; index: number }) {
         {count}
         {stat.suffix ?? ""}
       </div>
-      <div className="mt-3 text-[13px] uppercase tracking-[0.1em] text-[#86868B] dark:text-white/45">
+      <div className="mt-3 text-[13px] font-medium uppercase tracking-[0.1em] text-[#475569] dark:text-white/72">
         {stat.label}
       </div>
     </motion.div>
@@ -75,8 +76,15 @@ function StatBlock({ stat, index }: { stat: StatItem; index: number }) {
 
 export default function StatsCounter() {
   return (
-    <section className="border-y border-black/5 bg-[#F5F5F7] px-[10vw] py-[120px] dark:border-white/10 dark:bg-[#111111]">
-      <div className="grid gap-12 md:grid-cols-2 xl:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] xl:items-center">
+    <section className="relative overflow-hidden border-y border-black/5 bg-[#F5F5F7] px-[10vw] py-[120px] dark:border-white/10 dark:bg-[#111111]">
+      <motion.div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0066CC] to-transparent dark:via-white/70"
+        animate={{ x: ["-100%", "100%"] }}
+        transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+      />
+      <Reveal>
+        <div className="grid gap-12 md:grid-cols-2 xl:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] xl:items-center">
         <StatBlock stat={stats[0]} index={0} />
         <div className="hidden h-20 w-px bg-black/10 dark:bg-white/10 xl:block" />
         <StatBlock stat={stats[1]} index={1} />
@@ -84,7 +92,8 @@ export default function StatsCounter() {
         <StatBlock stat={stats[2]} index={2} />
         <div className="hidden h-20 w-px bg-black/10 dark:bg-white/10 xl:block" />
         <StatBlock stat={stats[3]} index={3} />
-      </div>
+        </div>
+      </Reveal>
     </section>
   );
 }

@@ -97,11 +97,13 @@ function MetricCard({
 
   return (
     <motion.div
-      initial={false}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-      transition={{ duration: 0.55, delay: index * 0.12 }}
-      className="rounded-[16px] border border-white/10 bg-white/[0.04] p-8"
+      initial={{ opacity: 0, y: 90, rotate: index === 1 ? 3 : -3, scale: 0.86 }}
+      animate={isInView ? { opacity: 1, y: 0, rotate: 0, scale: 1 } : { opacity: 0, y: 90, rotate: index === 1 ? 3 : -3, scale: 0.86 }}
+      whileHover={{ y: -12, scale: 1.035 }}
+      transition={{ duration: 0.75, delay: index * 0.16, ease: [0.16, 1, 0.3, 1] }}
+      className="relative overflow-hidden rounded-[16px] border border-white/10 bg-white/[0.04] p-8"
     >
+      <div className="absolute right-[-30px] top-[-30px] h-28 w-28 rounded-full opacity-25 blur-2xl" style={{ backgroundColor: accentColor }} />
       <div
         className="flex h-9 w-9 items-center justify-center rounded-full text-[11px] font-[600]"
         style={{ backgroundColor: `${accentColor}33`, color: accentColor }}
@@ -111,7 +113,7 @@ function MetricCard({
       <div className="mt-8 text-[56px] font-[200] leading-none tracking-[-0.03em]" style={{ color: accentColor }}>
         {formatMetric(count, metric.decimals, metric.suffix)}
       </div>
-      <p className="mt-4 max-w-[260px] text-[13px] leading-[1.6] text-white/45">{metric.label}</p>
+      <p className="mt-4 max-w-[260px] text-[13px] leading-[1.6] text-white/78">{metric.label}</p>
     </motion.div>
   );
 }
@@ -121,8 +123,15 @@ export default function MetricsDashboard({ client }: MetricsDashboardProps) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="bg-white px-[5vw] py-[120px]">
-      <div ref={ref} className="rounded-[20px] bg-[#1D1D1F] p-8 text-white md:p-12">
+    <section className="bg-white px-[5vw] py-[140px]">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 100, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-16% 0px -16% 0px" }}
+        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="rounded-[20px] bg-[#1D1D1F] p-8 text-white shadow-[0_30px_90px_rgba(0,0,0,0.22)] md:p-12"
+      >
         <h2 className="mb-12 text-[32px] font-[200] tracking-[-0.03em]">Project outcomes.</h2>
 
         <div className="grid gap-6 lg:grid-cols-3">
@@ -154,13 +163,13 @@ export default function MetricsDashboard({ client }: MetricsDashboardProps) {
           </div>
           <div className="mt-4 flex gap-4 md:gap-6">
             {["Jan", "Mar", "May", "Jul", "Sep"].map((month) => (
-              <span key={month} className="w-10 text-[10px] uppercase tracking-[0.15em] text-white/30 md:w-12">
+              <span key={month} className="w-10 text-[10px] uppercase tracking-[0.15em] text-white/68 md:w-12">
                 {month}
               </span>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

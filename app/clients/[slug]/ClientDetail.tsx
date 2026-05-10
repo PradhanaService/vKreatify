@@ -44,15 +44,8 @@ export default function ClientDetail({ client, nextClient }: ClientDetailProps) 
   useEffect(() => {
     setCompany(client.slug);
 
-    const html = document.documentElement;
-    html.classList.remove("dark");
-
     return () => {
       setCompany(null);
-      const stored = localStorage.getItem("theme");
-      if (stored === "dark") {
-        html.classList.add("dark");
-      }
     };
   }, [client.slug, setCompany]);
 
