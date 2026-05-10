@@ -1,0 +1,517 @@
+[
+  {
+    "id": 1,
+    "slug": "noize",
+    "name": "Noize",
+    "description": "Bold brand identity and immersive e-commerce experience.",
+    "tags": ["RETAIL", "E-COMMERCE"],
+    "accentColor": "#FF3B00",
+    "column": "left",
+    "year": "2023",
+    "tagline": "Where sound meets identity.",
+    "brief": "Noize came to us as a name on a napkin. A music collective that wanted to become a global apparel brand. We built everything from the ground up - the logo, the type system, the packaging language, the e-commerce platform, and the campaign motion pieces. The result is a brand that fans wear with pride and competitors study with envy.",
+    "stat": "3.2x",
+    "statLabel": "increase in online revenue within 6 months of launch",
+    "services": [
+      "Wordmark & Symbol Design",
+      "Full Brand Guidelines (120 page document)",
+      "Apparel Packaging System",
+      "E-commerce Platform (Shopify custom theme)",
+      "Campaign Motion Graphics",
+      "Social Media Design System"
+    ],
+    "process": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "description": "Three weeks embedded with the Noize crew. Listening sessions, gig nights, wardrobe teardowns. Understanding what the culture actually is."
+      },
+      {
+        "number": "02",
+        "title": "Strategy",
+        "description": "Brand positioning between streetwear and music label. The brand has to work on a vinyl sleeve and a hoodie equally."
+      },
+      {
+        "number": "03",
+        "title": "Design",
+        "description": "47 logo concepts. 3 rounds of refinement. One final mark that the whole team tattooed - we are not joking."
+      },
+      {
+        "number": "04",
+        "title": "Delivery",
+        "description": "Full Shopify build, motion package, brand guidelines, and a launch event visual identity."
+      }
+    ],
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80&auto=format&fit=crop",
+        "alt": "Concert crowd moving under stage lights for the Noize launch campaign."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=800&q=80&auto=format&fit=crop",
+        "alt": "Close-up vinyl record detail representing the tactile Noize identity."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80&auto=format&fit=crop",
+        "alt": "Music studio mixing board used as a reference for the Noize product system."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800&q=80&auto=format&fit=crop",
+        "alt": "Streetwear portrait showcasing the Noize apparel universe."
+      }
+    ],
+    "metrics": [
+      {
+        "icon": "music",
+        "value": 320,
+        "label": "Monthly active users (thousands)"
+      },
+      {
+        "icon": "revenue",
+        "value": 3.2,
+        "label": "Revenue multiplier at launch",
+        "suffix": "x",
+        "decimals": 1
+      },
+      {
+        "icon": "rating",
+        "value": 4.9,
+        "label": "Average customer rating",
+        "decimals": 1
+      }
+    ],
+    "testimonial": {
+      "quote": "They did not just design our brand. They understood our culture, our people, and what we were trying to say to the world. The result is something we are genuinely proud of.",
+      "name": "Marcus T.",
+      "role": "Founder, Noize Collective"
+    }
+  },
+  {
+    "id": 2,
+    "slug": "tattoo-collective",
+    "name": "Tattoo Collective",
+    "description": "Seamless booking platform for modern tattoo studios.",
+    "tags": ["BRANDING", "WEB DESIGN"],
+    "accentColor": "#C0392B",
+    "column": "right",
+    "year": "2019",
+    "tagline": "Art that lives on skin and screen.",
+    "brief": "Twenty four of the most sought-after tattoo artists in the country. One problem: no unified platform to book them. We designed a digital studio that respects the artistry, streamlines the admin, and lets the work speak. Artists build portfolios. Clients book sessions. Nobody fights with a Google Form anymore.",
+    "stat": "89%",
+    "statLabel": "booking completion rate, up from 34% on their previous system",
+    "services": [
+      "UX Research & Journey Mapping",
+      "Artist Portfolio System",
+      "Booking & Calendar Platform",
+      "Client Profile & History",
+      "Studio Brand Identity",
+      "Mobile-first Web App"
+    ],
+    "process": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "description": "Artist interviews, studio shadowing, and mapping every call, DM, and booking request happening behind the scenes."
+      },
+      {
+        "number": "02",
+        "title": "Strategy",
+        "description": "We framed the platform around artist craft first, with admin quietly disappearing into the background."
+      },
+      {
+        "number": "03",
+        "title": "Design",
+        "description": "Portfolio storytelling, booking flows, and availability states were refined until the product felt as precise as the artists themselves."
+      },
+      {
+        "number": "04",
+        "title": "Delivery",
+        "description": "Responsive web app, artist onboarding system, and a flexible identity that scales across studios and guest residencies."
+      }
+    ],
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1542856391-010fb87dcfed?w=800&q=80&auto=format&fit=crop",
+        "alt": "Tattoo artist working on a client in a studio setting."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1612459284270-b6a7bd9e1330?w=800&q=80&auto=format&fit=crop",
+        "alt": "Detailed tattoo art close-up used for the Tattoo Collective showcase."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=80&auto=format&fit=crop",
+        "alt": "Tattoo studio interior with curated lighting and equipment."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=800&q=80&auto=format&fit=crop",
+        "alt": "Artistic arm tattoo portrait reflecting the studio aesthetic."
+      }
+    ],
+    "metrics": [
+      {
+        "icon": "art",
+        "value": 24,
+        "label": "Artists onboarded to platform"
+      },
+      {
+        "icon": "calendar",
+        "value": 89,
+        "label": "Booking completion rate",
+        "suffix": "%"
+      },
+      {
+        "icon": "time",
+        "value": 3,
+        "label": "Minutes average booking time"
+      }
+    ],
+    "testimonial": {
+      "quote": "Our artists were skeptical about going digital. Within a week of launch, every single one of them was fully booked through the platform. It just works.",
+      "name": "Jade R.",
+      "role": "Studio Director, Tattoo Collective"
+    }
+  },
+  {
+    "id": 3,
+    "slug": "company-one",
+    "name": "Company One",
+    "description": "Clean and trustworthy digital banking dashboard.",
+    "tags": ["FINTECH", "PRODUCT"],
+    "accentColor": "#0055FF",
+    "column": "left",
+    "year": "2024",
+    "tagline": "Money, made simple.",
+    "brief": "A fintech startup with serious backers and a product that needed to earn trust in 3 seconds. We designed a banking dashboard that balanced data density with visual calm. Every number has a place. Every action has a clear path. The result launched to a 4.8 star rating on day one and has never dropped below it.",
+    "stat": "4.8*",
+    "statLabel": "App store rating maintained across 14 months post-launch",
+    "services": [
+      "Full Product Design (47 screens)",
+      "Design System (200+ components)",
+      "Data Visualisation Library",
+      "Onboarding Flow",
+      "Dark & Light Mode",
+      "Accessibility Audit (WCAG AA)"
+    ],
+    "process": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "description": "We audited competitor dashboards, interviewed early investors, and studied where users hesitated when money felt risky."
+      },
+      {
+        "number": "02",
+        "title": "Strategy",
+        "description": "The product vision centered on clarity under pressure: fewer decisions, stronger hierarchy, and confidence in every flow."
+      },
+      {
+        "number": "03",
+        "title": "Design",
+        "description": "We built a polished interface system where charts, balances, and actions could coexist without visual fatigue."
+      },
+      {
+        "number": "04",
+        "title": "Delivery",
+        "description": "A complete component library, responsive patterns, and QA standards shipped alongside the launch-ready product."
+      }
+    ],
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80&auto=format&fit=crop",
+        "alt": "Financial chart screen representing Company One's trading dashboard."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80&auto=format&fit=crop",
+        "alt": "Credit card on a dark surface symbolizing secure fintech experiences."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop",
+        "alt": "Data dashboard shown on a laptop for the Company One case study."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80&auto=format&fit=crop",
+        "alt": "Person using a finance app on a smartphone."
+      }
+    ],
+    "metrics": [
+      {
+        "icon": "mobile",
+        "value": 47,
+        "label": "Screens designed end to end"
+      },
+      {
+        "icon": "rating",
+        "value": 4.8,
+        "label": "App store rating at launch",
+        "decimals": 1
+      },
+      {
+        "icon": "system",
+        "value": 200,
+        "label": "Design system components"
+      }
+    ],
+    "testimonial": {
+      "quote": "We had tried two other agencies before this. Nobody else understood that trust is a design problem. This team gets it at a level that is genuinely rare.",
+      "name": "Priya S.",
+      "role": "CPO, Company One"
+    }
+  },
+  {
+    "id": 4,
+    "slug": "company-two",
+    "name": "Company Two",
+    "description": "Ultimate property discovery experience for modern buyers.",
+    "tags": ["REAL ESTATE", "UX"],
+    "accentColor": "#2D6A4F",
+    "column": "right",
+    "year": "2024",
+    "tagline": "Find where you belong.",
+    "brief": "Property buyers in 2024 were doing everything on their phones but the platforms felt like they were built in 2009. We redesigned the entire discovery experience - from first search to signed offer. Filters that make sense. Maps that work. Listings that make you feel something. Drop-off fell 61% in the first quarter.",
+    "stat": "61%",
+    "statLabel": "reduction in search-to-enquiry drop-off rate after launch",
+    "services": [
+      "UX Research & Persona Development",
+      "Property Search & Filter System",
+      "Interactive Map Interface",
+      "Listing Detail Pages",
+      "Saved Homes & Comparison Tool",
+      "Agent Contact Flow"
+    ],
+    "process": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "description": "We followed buyers through fragmented search journeys and identified exactly where outdated real-estate patterns were costing attention."
+      },
+      {
+        "number": "02",
+        "title": "Strategy",
+        "description": "The new direction focused on calm decision-making: richer listing previews, better filters, and tighter map interactions."
+      },
+      {
+        "number": "03",
+        "title": "Design",
+        "description": "Layouts, cards, and map components were tuned to feel aspirational without losing clarity or speed on mobile."
+      },
+      {
+        "number": "04",
+        "title": "Delivery",
+        "description": "We delivered a modular search system, responsive listing flows, and a scalable visual language for future growth."
+      }
+    ],
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80&auto=format&fit=crop",
+        "alt": "Luxury house exterior representing the Company Two property platform."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80&auto=format&fit=crop",
+        "alt": "Bright living room interior with premium styling."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80&auto=format&fit=crop",
+        "alt": "Modern architecture exterior used in the before and after comparison."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80&auto=format&fit=crop",
+        "alt": "Bright kitchen interior reflecting the aspirational housing experience."
+      }
+    ],
+    "metrics": [
+      {
+        "icon": "home",
+        "value": 61,
+        "label": "Drop-off reduction",
+        "suffix": "%"
+      },
+      {
+        "icon": "search",
+        "value": 12,
+        "label": "Seconds average search to result"
+      },
+      {
+        "icon": "location",
+        "value": 4,
+        "label": "Cities launched across"
+      }
+    ],
+    "testimonial": {
+      "quote": "Our users were dropping off at the search stage. We thought it was a product problem. It was a design problem. Fixed in one sprint.",
+      "name": "Daniel W.",
+      "role": "CEO, Company Two"
+    }
+  },
+  {
+    "id": 5,
+    "slug": "company-three",
+    "name": "Company Three",
+    "description": "Simplifying patient journeys through thoughtful design.",
+    "tags": ["HEALTHCARE", "RESEARCH"],
+    "accentColor": "#6B4EFF",
+    "column": "left",
+    "year": "2024",
+    "tagline": "Care, without the complexity.",
+    "brief": "Healthcare admin is quietly breaking people. Missed appointments. Lost referrals. Portals that require a computer science degree. We simplified everything - booking, records, communication - into one interface that patients actually want to use. Onboarding dropped from 14 minutes to under 4. Nobody cried in the waiting room anymore.",
+    "stat": "40%",
+    "statLabel": "faster patient onboarding, 14 minutes reduced to under 4",
+    "services": [
+      "Patient Journey Mapping",
+      "Booking & Scheduling UX",
+      "Records Access Interface",
+      "Accessibility QA",
+      "Notification Design System",
+      "Usability Testing"
+    ],
+    "process": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "description": "We spoke with patients, care staff, and support teams to understand the quiet points of failure hidden inside the admin journey."
+      },
+      {
+        "number": "02",
+        "title": "Strategy",
+        "description": "The product had to feel reassuring first and efficient second, with accessibility baked into the core interaction model."
+      },
+      {
+        "number": "03",
+        "title": "Design",
+        "description": "We simplified flows, softened hierarchy, and used motion and spacing to reduce cognitive load across complex tasks."
+      },
+      {
+        "number": "04",
+        "title": "Delivery",
+        "description": "The result shipped with reusable UI patterns, healthcare-safe messaging states, and a fully tested onboarding flow."
+      }
+    ],
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&auto=format&fit=crop",
+        "alt": "Doctor using a tablet in a bright healthcare setting."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop",
+        "alt": "Medical professional portrait used for the healthcare product story."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80&auto=format&fit=crop",
+        "alt": "Healthcare app on a phone screen representing the patient interface."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&q=80&auto=format&fit=crop",
+        "alt": "Calm wellness scene reinforcing the healthcare brand mood."
+      }
+    ],
+    "metrics": [
+      {
+        "icon": "health",
+        "value": 40,
+        "label": "Faster patient onboarding",
+        "suffix": "%"
+      },
+      {
+        "icon": "form",
+        "value": 6,
+        "label": "Clicks to book an appointment"
+      },
+      {
+        "icon": "accessibility",
+        "value": 100,
+        "label": "WCAG AA accessibility score",
+        "suffix": "%"
+      }
+    ],
+    "testimonial": {
+      "quote": "Healthcare UX is hard because the stakes are real. This team treated it with the seriousness it deserved. Our patients noticed immediately.",
+      "name": "Dr. Ananya K.",
+      "role": "Head of Digital, Company Three"
+    }
+  },
+  {
+    "id": 6,
+    "slug": "company-four",
+    "name": "Company Four",
+    "description": "Learning platform built for momentum and daily progress.",
+    "tags": ["PLATFORM", "COURSES"],
+    "accentColor": "#FF6B35",
+    "column": "right",
+    "year": "2025",
+    "tagline": "Learn without limits.",
+    "brief": "The client had one question: why do students pay for courses and never finish them? We spent a month finding out. The answer was mostly the interface - dull, rigid, and designed for administrators not learners. We rebuilt it around momentum. Small wins. Progress you can feel. Daily active usage doubled in three months.",
+    "stat": "2.1x",
+    "statLabel": "daily active usage increase within 3 months of relaunch",
+    "services": [
+      "Learning Platform UX",
+      "Course Card System",
+      "Progress Tracking Flows",
+      "Gamification Patterns",
+      "Brand Refresh",
+      "Content Design"
+    ],
+    "process": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "description": "We watched how students dropped in and out of courses, where motivation broke, and what small rewards actually mattered."
+      },
+      {
+        "number": "02",
+        "title": "Strategy",
+        "description": "The experience was reframed around momentum, visible progress, and a more human emotional reward system."
+      },
+      {
+        "number": "03",
+        "title": "Design",
+        "description": "We designed brighter course flows, playful progress states, and a clearer hierarchy that made learning feel active."
+      },
+      {
+        "number": "04",
+        "title": "Delivery",
+        "description": "A modular platform, brand toolkit, and engagement-focused UI shipped together to support future course growth."
+      }
+    ],
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80&auto=format&fit=crop",
+        "alt": "Students collaborating around a table for the edtech case study."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80&auto=format&fit=crop",
+        "alt": "Learner working on a laptop in a focused study environment."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80&auto=format&fit=crop",
+        "alt": "Bright classroom scene showing collaborative learning."
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=800&q=80&auto=format&fit=crop",
+        "alt": "Study notes and desk setup with an energetic learning mood."
+      }
+    ],
+    "metrics": [
+      {
+        "icon": "books",
+        "value": 94,
+        "label": "Course completion rate",
+        "suffix": "%"
+      },
+      {
+        "icon": "users",
+        "value": 2.1,
+        "label": "Daily active usage increase",
+        "suffix": "x",
+        "decimals": 1
+      },
+      {
+        "icon": "trophy",
+        "value": 18,
+        "label": "Awards won post-relaunch"
+      }
+    ],
+    "testimonial": {
+      "quote": "We doubled daily active usage without changing a single feature. Just the design. That tells you everything you need to know.",
+      "name": "Liam O.",
+      "role": "Founder, Company Four"
+    }
+  }
+]
