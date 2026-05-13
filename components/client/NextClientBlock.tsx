@@ -34,7 +34,7 @@ export default function NextClientBlock({ client }: NextClientBlockProps) {
 
       <div className="relative z-10 flex w-full items-center justify-between gap-10">
         <div>
-          <p className="mb-3 text-[10px] uppercase tracking-[0.2em] text-white/72 transition-colors duration-300 group-hover:text-white">
+          <p className="mb-3 text-[10px] uppercase tracking-[0.2em] text-white/70 transition-colors duration-300 group-hover:text-white">
             Next Project
           </p>
           <h2 className="text-[clamp(32px,5vw,72px)] font-[200] tracking-[-0.03em] transition-colors duration-300 group-hover:text-white">
@@ -42,7 +42,7 @@ export default function NextClientBlock({ client }: NextClientBlockProps) {
           </h2>
         </div>
 
-        <div className="text-[48px] text-white/68 transition-all duration-300 group-hover:translate-x-2 group-hover:text-white">
+        <div className="text-[48px] text-white/70 transition-all duration-300 group-hover:translate-x-2 group-hover:text-white">
           &rarr;
         </div>
       </div>

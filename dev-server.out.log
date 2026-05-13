@@ -1,0 +1,117 @@
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:4001
+- Network:       http://172.29.176.1:4001
+✓ Ready in 916ms
+
+○ Compiling / ...
+○ Compiling /_error ...
+✓ Compiled in 1946ms
+ GET / 200 in 2.1s (next.js: 1144ms, application-code: 926ms)
+ GET / 200 in 363ms (next.js: 10ms, application-code: 354ms)
+○ Compiling /clients/[slug] ...
+ GET /clients/noize 200 in 12.0s (next.js: 11.5s, generate-params: 1261ms, application-code: 540ms)
+ GET /clients/noize 200 in 295ms (next.js: 67ms, generate-params: 30ms, application-code: 228ms)
+ GET /clients/tattoo-collective 200 in 176ms (next.js: 43ms, generate-params: 25ms, application-code: 133ms)
+ GET /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1568515045052-f9a854d70bfd%3Fw%3D800%26q%3D80%26auto%3Dformat%26fit%3Dcrop&w=1080&q=75 500 in 14.7s (next.js: 12.9s, application-code: 1784ms)
+ GET /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1568515045052-f9a854d70bfd%3Fw%3D800%26q%3D80%26auto%3Dformat%26fit%3Dcrop&w=1080&q=75 500 in 14.7s (next.js: 12.9s, application-code: 1800ms)
+ GET /clients/company-one 200 in 116ms (next.js: 34ms, generate-params: 19ms, application-code: 81ms)
+ GET /clients/company-two 200 in 1265ms (next.js: 56ms, generate-params: 40ms, application-code: 1209ms)
+ GET /clients/company-three 200 in 132ms (next.js: 57ms, generate-params: 37ms, application-code: 75ms)
+ GET /clients/company-four 200 in 188ms (next.js: 42ms, generate-params: 25ms, application-code: 145ms)
+ GET / 200 in 213ms (next.js: 30ms, application-code: 183ms)
+ GET / 200 in 82ms (next.js: 22ms, application-code: 60ms)
+ GET / 200 in 868ms (next.js: 24ms, application-code: 844ms)
+ GET / 200 in 402ms (next.js: 32ms, application-code: 369ms)
+ GET /clients/noize 200 in 779ms (next.js: 268ms, generate-params: 76ms, application-code: 512ms)
+ GET / 200 in 212ms (next.js: 37ms, application-code: 174ms)
+ GET / 200 in 148ms (next.js: 31ms, application-code: 118ms)
+ GET / 200 in 72ms (next.js: 15ms, application-code: 58ms)
+✓ Compiled in 518ms
+ GET / 200 in 981ms (next.js: 201ms, application-code: 780ms)
+✓ Compiled in 275ms
+✓ Compiled in 316ms
+ GET / 200 in 1116ms (next.js: 290ms, application-code: 826ms)
+✓ Compiled in 11.3s
+ GET / 200 in 18.8s (next.js: 6.3s, application-code: 12.5s)
+ GET / 200 in 8.1s (next.js: 195ms, application-code: 7.9s)
+ GET / 200 in 6.8s (next.js: 210ms, application-code: 6.6s)
+ GET / 200 in 6.8s (next.js: 1437ms, application-code: 5.3s)
+ GET / 200 in 6.7s (next.js: 3.7s, application-code: 3.0s)
+✓ Finished filesystem cache database compaction in 13.9s
+ GET / 200 in 2.8s (next.js: 51ms, application-code: 2.8s)
+ GET / 200 in 166ms (next.js: 6ms, application-code: 160ms)
+ GET /clients/noize 200 in 1646ms (next.js: 500ms, generate-params: 98ms, application-code: 1146ms)
+ GET / 200 in 365ms (next.js: 30ms, application-code: 335ms)
+✓ Compiled in 2.4s
+ GET / 200 in 2.8s (next.js: 671ms, application-code: 2.1s)
+ GET / 200 in 900ms (next.js: 95ms, application-code: 805ms)
+ GET / 200 in 2.7s (next.js: 22ms, application-code: 2.7s)
+ GET /clients/noize 200 in 1305ms (next.js: 580ms, generate-params: 65ms, application-code: 725ms)
+ GET / 200 in 653ms (next.js: 48ms, application-code: 605ms)
+✓ Compiled in 1423ms
+ GET / 200 in 2.9s (next.js: 843ms, application-code: 2.1s)
+ GET / 200 in 1340ms (next.js: 456ms, application-code: 884ms)
+ GET /clients/noize 200 in 573ms (next.js: 288ms, generate-params: 22ms, application-code: 285ms)
+ GET / 200 in 847ms (next.js: 40ms, application-code: 807ms)
+ GET / 200 in 1184ms (next.js: 6ms, application-code: 1178ms)
+ GET / 200 in 496ms (next.js: 59ms, application-code: 437ms)
+ GET /clients/noize 200 in 471ms (next.js: 96ms, generate-params: 61ms, application-code: 375ms)
+ GET /clients/tattoo-collective 200 in 341ms (next.js: 88ms, generate-params: 79ms, application-code: 254ms)
+ GET / 200 in 1655ms (next.js: 565ms, application-code: 1090ms)
+ GET / 200 in 1622ms (next.js: 53ms, application-code: 1569ms)
+ GET / 200 in 5.8s (next.js: 368ms, application-code: 5.4s)
+ GET / 200 in 1609ms (next.js: 57ms, application-code: 1552ms)
+ GET / 200 in 10.0s (next.js: 133ms, application-code: 9.9s)
+ GET /clients/noize 200 in 1169ms (next.js: 364ms, generate-params: 277ms, application-code: 805ms)
+ GET /clients/noize 200 in 225ms (next.js: 47ms, generate-params: 23ms, application-code: 178ms)
+ GET /clients/noize 200 in 1671ms (next.js: 152ms, generate-params: 114ms, application-code: 1520ms)
+ GET / 200 in 1828ms (next.js: 374ms, application-code: 1454ms)
+ GET /clients/noize 200 in 263ms (next.js: 59ms, generate-params: 25ms, application-code: 204ms)
+ GET / 200 in 365ms (next.js: 40ms, application-code: 325ms)
+ GET / 200 in 1250ms (next.js: 41ms, application-code: 1208ms)
+ GET /clients/noize 200 in 479ms (next.js: 195ms, generate-params: 60ms, application-code: 284ms)
+ GET / 200 in 2.7s (next.js: 9ms, application-code: 2.7s)
+ GET /clients/noize 200 in 624ms (next.js: 106ms, generate-params: 60ms, application-code: 518ms)
+ GET / 200 in 301ms (next.js: 17ms, application-code: 284ms)
+✓ Compiled in 3.6s
+ GET / 200 in 1867ms (next.js: 942ms, application-code: 925ms)
+✓ Compiled in 2s
+ GET / 200 in 1565ms (next.js: 720ms, application-code: 844ms)
+✓ Compiled in 1050ms
+ GET / 200 in 3.6s (next.js: 1090ms, application-code: 2.5s)
+✓ Compiled in 4.1s
+ GET / 200 in 4.1s (next.js: 3.2s, application-code: 913ms)
+✓ Compiled in 11.5s
+✓ Compiled in 1644ms
+ GET / 200 in 2.8s (next.js: 926ms, application-code: 1863ms)
+ GET /clients/noize 200 in 1134ms (next.js: 466ms, generate-params: 16ms, application-code: 668ms)
+✓ Compiled in 4.8s
+ GET /clients/noize 200 in 2.2s (next.js: 666ms, generate-params: 87ms, application-code: 1531ms)
+✓ Compiled in 2.2s
+ GET /clients/noize 200 in 3.7s (next.js: 1146ms, generate-params: 183ms, application-code: 2.5s)
+ GET / 200 in 9.7s (next.js: 2.0s, application-code: 7.6s)
+ GET /clients/noize 200 in 87ms (next.js: 27ms, generate-params: 16ms, application-code: 60ms)
+ GET /clients/noize 200 in 284ms (next.js: 8ms, generate-params: 60µs, application-code: 276ms)
+ GET / 200 in 816ms (next.js: 71ms, application-code: 745ms)
+ GET / 200 in 5.6s (next.js: 1804ms, application-code: 3.8s)
+ GET / 200 in 2.9s (next.js: 95ms, application-code: 2.8s)
+ GET / 200 in 2.0s (next.js: 62ms, application-code: 1961ms)
+ GET /clients/noize 200 in 16.8s (next.js: 2.9s, generate-params: 648ms, application-code: 13.9s)
+ GET /clients/noize 200 in 2.8s (next.js: 362ms, generate-params: 272ms, application-code: 2.4s)
+✓ Compiled in 7.5s
+ GET /clients/noize 200 in 7.3s (next.js: 3.3s, generate-params: 140ms, application-code: 4.0s)
+ GET /clients/noize 200 in 5.8s (next.js: 535ms, generate-params: 433ms, application-code: 5.3s)
+✓ Compiled in 1393ms
+ GET /clients/noize 200 in 4.0s (next.js: 2.1s, generate-params: 86ms, application-code: 1923ms)
+ GET /clients/noize 200 in 6.3s (next.js: 361ms, generate-params: 236ms, application-code: 6.0s)
+✓ Compiled in 5.6s
+ GET /clients/noize 200 in 15.8s (next.js: 13.7s, generate-params: 265ms, application-code: 2.1s)
+ GET /clients/noize 200 in 5.2s (next.js: 177ms, generate-params: 113ms, application-code: 5.0s)
+ GET /clients/noize 200 in 3.2s (next.js: 162ms, generate-params: 107ms, application-code: 3.0s)
+✓ Compiled in 5.5s
+ GET /clients/noize 200 in 9.9s (next.js: 5.1s, generate-params: 257ms, application-code: 4.8s)
+ GET /clients/noize 200 in 5.5s (next.js: 147ms, generate-params: 71ms, application-code: 5.4s)
+✓ Compiled in 3.3s
+ GET /clients/noize 200 in 5.3s (next.js: 1329ms, generate-params: 200ms, application-code: 4.0s)
+ GET /clients/noize 200 in 5.7s (next.js: 419ms, generate-params: 183ms, application-code: 5.3s)
+ GET / 200 in 9.3s (next.js: 2.9s, application-code: 6.5s)

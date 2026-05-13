@@ -9,7 +9,7 @@ export default function Story({ client }: StoryProps) {
     <section className="bg-[#FFFFFF] px-[5vw] py-[120px] dark:bg-black">
       <div className="grid gap-16 lg:grid-cols-3 lg:gap-12">
         <div>
-          <p className="mb-6 text-[10px] uppercase tracking-[0.2em] text-[#AEAEB2] dark:text-white/35">
+          <p className="mb-6 text-[10px] uppercase tracking-[0.2em] text-[#AEAEB2] dark:text-white/40">
             01 - The Brief
           </p>
           <p className="text-[17px] font-[300] leading-[1.8] text-[#6E6E73] dark:text-white/60">
@@ -18,7 +18,7 @@ export default function Story({ client }: StoryProps) {
         </div>
 
         <div>
-          <p className="mb-6 text-[10px] uppercase tracking-[0.2em] text-[#AEAEB2] dark:text-white/35">
+          <p className="mb-6 text-[10px] uppercase tracking-[0.2em] text-[#AEAEB2] dark:text-white/40">
             02 - What We Built
           </p>
           <div>
@@ -34,7 +34,7 @@ export default function Story({ client }: StoryProps) {
         </div>
 
         <div>
-          <p className="mb-6 text-[10px] uppercase tracking-[0.2em] text-[#AEAEB2] dark:text-white/35">
+          <p className="mb-6 text-[10px] uppercase tracking-[0.2em] text-[#AEAEB2] dark:text-white/40">
             03 - The Impact
           </p>
           <p
@@ -43,8 +43,8 @@ export default function Story({ client }: StoryProps) {
           >
             {client.stat}
           </p>
-          <p className="mt-3 text-[13px] text-[#86868B] dark:text-white/45">{client.statLabel}</p>
-          <div className="mt-8 inline-flex rounded-full border border-black/10 bg-black/[0.04] px-[14px] py-[6px] text-[12px] text-[#86868B] dark:border-white/10 dark:bg-white/5 dark:text-white/45">
+          <p className="mt-3 text-[13px] text-[#86868B] dark:text-white/50">{client.statLabel}</p>
+          <div className="mt-8 inline-flex rounded-full border border-black/10 bg-black/[0.04] px-[14px] py-[6px] text-[12px] text-[#86868B] dark:border-white/10 dark:bg-white/5 dark:text-white/50">
             {client.year}
           </div>
         </div>

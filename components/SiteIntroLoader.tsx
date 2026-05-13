@@ -11,7 +11,7 @@ export default function SiteIntroLoader() {
   const pathname = usePathname();
   const rootRef = useRef<HTMLDivElement | null>(null);
   const logoRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(pathname === "/");
+  const [isVisible, setIsVisible] = useState(false);
 
   const particles = useMemo(
     () =>
@@ -26,8 +26,15 @@ export default function SiteIntroLoader() {
   );
 
   useLayoutEffect(() => {
-    if (pathname !== "/") {
+    const hasSeenIntro = window.sessionStorage.getItem("vk-intro-seen") === "true";
+
+    if (pathname !== "/" || hasSeenIntro) {
       setIsVisible(false);
+      return undefined;
+    }
+
+    if (!isVisible) {
+      setIsVisible(true);
       return undefined;
     }
 
@@ -94,6 +101,7 @@ export default function SiteIntroLoader() {
         onComplete: () => {
           document.documentElement.style.overflow = originalOverflow;
           document.body.style.overflow = originalBodyOverflow;
+          window.sessionStorage.setItem("vk-intro-seen", "true");
           setIsVisible(false);
         },
       });
@@ -210,7 +218,7 @@ export default function SiteIntroLoader() {
       document.body.style.overflow = originalBodyOverflow;
       ctx.revert();
     };
-  }, [pathname]);
+  }, [isVisible, pathname]);
 
   if (!isVisible) {
     return null;
@@ -255,7 +263,7 @@ export default function SiteIntroLoader() {
         {particles.map((particle) => (
           <span
             key={particle.id}
-            className="intro-particle absolute rounded-full bg-white/72 shadow-[0_0_18px_rgba(255,255,255,0.32)]"
+            className="intro-particle absolute rounded-full bg-white/70 shadow-[0_0_18px_rgba(255,255,255,0.32)]"
             style={{
               left: `${particle.left}%`,
               top: `${particle.top}%`,
@@ -287,7 +295,7 @@ export default function SiteIntroLoader() {
           {phrases.map((phrase) => (
             <div
               key={phrase}
-              className="intro-phrase absolute inset-0 flex items-center justify-center text-[clamp(14px,2vw,22px)] font-[300] uppercase tracking-[0.22em] text-white/78"
+              className="intro-phrase absolute inset-0 flex items-center justify-center text-[clamp(14px,2vw,22px)] font-[300] uppercase tracking-[0.22em] text-white/80"
             >
               {phrase}
             </div>

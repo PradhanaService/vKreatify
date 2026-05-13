@@ -42,10 +42,10 @@ export default function DragGallery({ client }: DragGalleryProps) {
     <section className="bg-[#FAFAFA] px-[5vw] py-[120px] dark:bg-[#111111]">
       <div className="mx-auto max-w-[1600px]">
         <div className="mb-6 flex items-center justify-between gap-6">
-          <p className="text-[12px] uppercase tracking-[0.1em] text-[#86868B] dark:text-white/45">
+          <p className="text-[12px] uppercase tracking-[0.1em] text-[#86868B] dark:text-white/50">
             Gallery
           </p>
-          <p className="text-[12px] uppercase tracking-[0.1em] text-[#86868B] dark:text-white/45">
+          <p className="text-[12px] uppercase tracking-[0.1em] text-[#86868B] dark:text-white/50">
             &larr; Drag to explore &rarr;
           </p>
         </div>
@@ -75,7 +75,7 @@ export default function DragGallery({ client }: DragGalleryProps) {
                   {client.tags.map((tag) => (
                     <span
                       key={`${image.src}-${tag}`}
-                      className="rounded-full border border-white/20 bg-white/15 px-3 py-[5px] text-[10px] uppercase tracking-[0.12em] text-white backdrop-blur-xl"
+                      className="rounded-full border border-white/20 bg-white/20 px-3 py-[5px] text-[10px] uppercase tracking-[0.12em] text-white backdrop-blur-xl"
                     >
                       {tag}
                     </span>

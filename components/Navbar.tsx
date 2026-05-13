@@ -107,7 +107,7 @@ export default function Navbar() {
         className={`fixed left-0 right-0 top-0 z-[1000] transition-all duration-300 ${
           atTop
             ? "bg-transparent border-transparent backdrop-blur-0 shadow-none"
-            : "bg-white/85 border-b border-black/10 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,0.04)] dark:border-white/10 dark:bg-black/75"
+            : "bg-white/90 border-b border-black/10 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,0.04)] dark:border-white/10 dark:bg-black/75"
         }`}
       >
         <div className="mx-auto flex h-[60px] max-w-[1440px] items-center justify-between px-8 lg:px-12">
@@ -131,7 +131,7 @@ export default function Navbar() {
                   className={`text-[15px] transition-colors duration-200 ${
                     isActive
                       ? "font-medium text-[#1D1D1F] dark:text-white"
-                      : "font-normal text-[#1D1D1F] hover:text-[#6E6E73] dark:text-white/85 dark:hover:text-white"
+                      : "font-normal text-[#1D1D1F] hover:text-[#6E6E73] dark:text-white/90 dark:hover:text-white"
                   }`}
                 >
                   {item.label}
@@ -197,7 +197,7 @@ export default function Navbar() {
               className={`text-[32px] tracking-[-0.03em] transition-colors duration-200 ${
                 activeSection === item.id
                   ? "font-medium text-[#1D1D1F] dark:text-white"
-                  : "font-normal text-[#1D1D1F] hover:text-[#6E6E73] dark:text-white/85 dark:hover:text-white"
+                  : "font-normal text-[#1D1D1F] hover:text-[#6E6E73] dark:text-white/90 dark:hover:text-white"
               }`}
               onClick={closeMenu}
             >

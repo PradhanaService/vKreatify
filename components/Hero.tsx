@@ -7,9 +7,9 @@ import { useThemeContext } from "../context/ThemeContext";
 import { AnimatedStripes, Magnetic, ParallaxLayer, SplitReveal, WebGLDistortionField } from "./MotionPrimitives";
 
 const lightHeroImage =
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&q=85&auto=format&fit=crop";
 const darkHeroImage =
-  "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=80&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1920&q=85&auto=format&fit=crop";
 
 export default function Hero() {
   const { theme } = useThemeContext();
@@ -20,7 +20,6 @@ export default function Hero() {
   });
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const contentY = useTransform(scrollYProgress, [0, 1], [0, -90]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.72], [1, 0]);
 
   return (
     <section
@@ -32,8 +31,8 @@ export default function Hero() {
         src={theme === "dark" ? darkHeroImage : lightHeroImage}
         alt={
           theme === "dark"
-            ? "Night sky background for the vKreatify hero section"
-            : "Mountain landscape background for the vKreatify hero section"
+            ? "Night city architecture background for the vKreatify hero section"
+            : "Bright creative studio workspace background for the vKreatify hero section"
         }
         initial={false}
         animate={{ opacity: 1 }}
@@ -58,13 +57,13 @@ export default function Hero() {
 
       <AnimatedStripes className="absolute bottom-[8%] left-0 right-0 z-[4] h-[220px] text-[#0066CC]/45 dark:text-white/20" />
 
-      <motion.div className="relative z-10 max-w-5xl" style={{ y: contentY, opacity: contentOpacity }}>
+      <motion.div className="relative z-10 max-w-5xl" style={{ y: contentY, opacity: 1 }}>
         <ParallaxLayer distance={34}>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#475569] dark:text-white/72"
+            className="mb-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#475569] dark:text-white/70"
           >
           Strategic Design Studio
           </motion.p>
@@ -79,7 +78,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 max-w-[480px] text-[19px] font-[300] leading-8 text-[#374151] dark:text-white/78"
+          className="mt-6 max-w-[480px] text-[19px] font-[300] leading-8 text-[#374151] dark:text-white/80"
         >
           From bold startups to global brands. Design that moves people.
         </motion.p>

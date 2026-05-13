@@ -4,6 +4,7 @@ import StatsCounter from "../components/StatsCounter";
 import HallOfFame from "../components/HallOfFame";
 import { AnimatedStripes, Reveal, SplitReveal } from "../components/MotionPrimitives";
 import Navbar from "../components/Navbar";
+import WordsOnTheStreet from "../components/WordsOnTheStreet";
 
 export default function Home() {
   return (
@@ -15,13 +16,14 @@ export default function Home() {
 
         <StatsCounter />
         <HallOfFame />
+        <WordsOnTheStreet />
 
         <section
           id="work"
           className="relative overflow-hidden border-t border-[#0066CC]/20 bg-[#F4FAFF] px-5 py-28 dark:border-white/10 dark:bg-black md:px-16 lg:px-24 xl:px-32"
         >
           <div className="absolute right-[-8%] top-[-40%] h-[420px] w-[420px] rounded-full bg-[#0066CC]/16 blur-[70px]" />
-          <AnimatedStripes className="absolute inset-x-0 top-4 h-40 text-[#0066CC]/38 dark:text-white/15" />
+          <AnimatedStripes className="absolute inset-x-0 top-4 h-40 text-[#0066CC]/38 dark:text-white/20" />
           <div className="grid gap-8 lg:grid-cols-[0.4fr_0.6fr]">
             <Reveal>
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#86868B] dark:text-white/50">

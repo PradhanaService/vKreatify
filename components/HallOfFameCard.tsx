@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { MouseEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import type { Client } from "../data/clients";
@@ -12,15 +13,15 @@ type HallOfFameCardProps = {
 };
 
 export default function HallOfFameCard({ client }: HallOfFameCardProps) {
+  const router = useRouter();
   const ref = useRef<HTMLAnchorElement | null>(null);
   const cardRef = useRef<HTMLDivElement | null>(null);
+  const openTimeoutRef = useRef<number | null>(null);
+  const fallbackTimeoutRef = useRef<number | null>(null);
   const [isHighlighted, setIsHighlighted] = useState(false);
   const [pointer, setPointer] = useState({ x: 50, y: 50 });
   const [isHovering, setIsHovering] = useState(false);
-  const isInView = useInView(ref, {
-    once: true,
-    margin: "-100px",
-  });
+  const [isOpening, setIsOpening] = useState(false);
 
   const isLeftColumn = client.column === "left";
   const { scrollYProgress } = useScroll({
@@ -28,7 +29,7 @@ export default function HallOfFameCard({ client }: HallOfFameCardProps) {
     offset: ["start end", "end start"],
   });
   const mediaY = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
-  const cardY = useTransform(scrollYProgress, [0, 1], isLeftColumn ? [90, -40] : [140, -70]);
+  const cardY = useTransform(scrollYProgress, [0, 1], isLeftColumn ? [28, -24] : [44, -30]);
   const graphicRotate = useTransform(scrollYProgress, [0, 1], isLeftColumn ? [-7, 7] : [8, -8]);
 
   const updatePointer = (event: MouseEvent<HTMLAnchorElement>) => {
@@ -37,6 +38,33 @@ export default function HallOfFameCard({ client }: HallOfFameCardProps) {
       x: ((event.clientX - rect.left) / rect.width) * 100,
       y: ((event.clientY - rect.top) / rect.height) * 100,
     });
+  };
+
+  const handleOpen = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+
+    event.preventDefault();
+
+    if (isOpening) {
+      return;
+    }
+
+    window.sessionStorage.setItem("vk-enter-client", client.slug);
+    setIsOpening(true);
+
+    const targetPath = `/clients/${client.slug}`;
+
+    openTimeoutRef.current = window.setTimeout(() => {
+      router.push(targetPath);
+
+      fallbackTimeoutRef.current = window.setTimeout(() => {
+        if (window.location.pathname !== targetPath) {
+          window.location.assign(targetPath);
+        }
+      }, 700);
+    }, 560);
   };
 
   useEffect(() => {
@@ -58,14 +86,26 @@ export default function HallOfFameCard({ client }: HallOfFameCardProps) {
     return undefined;
   }, [client.slug]);
 
+  useEffect(() => {
+    return () => {
+      if (openTimeoutRef.current) {
+        window.clearTimeout(openTimeoutRef.current);
+      }
+
+      if (fallbackTimeoutRef.current) {
+        window.clearTimeout(fallbackTimeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
     <motion.div
       initial={false}
       style={{ y: cardY }}
-      animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0.15, x: isLeftColumn ? -80 : 80, scale: 0.9 }}
+      animate={{ opacity: 1, x: 0, scale: isOpening ? 0.985 : 1 }}
       transition={{
-        duration: 1,
-        ease: "easeOut",
+        duration: isOpening ? 0.32 : 1,
+        ease: isOpening ? [0.76, 0, 0.24, 1] : "easeOut",
         delay: isLeftColumn ? 0 : 0.15,
       }}
       className="relative"
@@ -93,6 +133,7 @@ export default function HallOfFameCard({ client }: HallOfFameCardProps) {
             href={`/clients/${client.slug}`}
             prefetch={true}
             scroll={true}
+            onClick={handleOpen}
             onMouseMove={updatePointer}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
@@ -100,10 +141,19 @@ export default function HallOfFameCard({ client }: HallOfFameCardProps) {
           >
           <div className="overflow-hidden rounded-[4px]">
             <motion.div
-              initial={{ clipPath: "inset(0 0 100% 0)" }}
-              animate={isInView ? { clipPath: "inset(0 0 0% 0)" } : { clipPath: "inset(0 0 100% 0)" }}
-              whileHover={{ scale: 1.04, rotateX: isHovering ? -2 : 0, rotateY: isHovering ? 2 : 0 }}
-              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              layoutId={`work-card-${client.slug}`}
+              initial={false}
+              animate={
+                isOpening
+                  ? {
+                      clipPath: "inset(0 0 0% 0)",
+                      scale: [1, 0.96, 1.08],
+                      rotate: isLeftColumn ? [0, -1.4, 0] : [0, 1.4, 0],
+                    }
+                  : { clipPath: "inset(0 0 0% 0)", scale: 1, rotate: 0 }
+              }
+              whileHover={isOpening ? undefined : { scale: 1.04, rotateX: isHovering ? -2 : 0, rotateY: isHovering ? 2 : 0 }}
+              transition={{ duration: isOpening ? 0.56 : 0.65, ease: [0.16, 1, 0.3, 1] }}
               className="relative w-full overflow-hidden rounded-[4px]"
               style={{
                 background: client.accentColor,
@@ -111,6 +161,11 @@ export default function HallOfFameCard({ client }: HallOfFameCardProps) {
                 transformStyle: "preserve-3d",
               }}
             >
+              <motion.div
+                layoutId={`work-card-color-${client.slug}`}
+                className="absolute inset-0"
+                style={{ background: client.accentColor }}
+              />
               <motion.div
                 className="absolute inset-0 opacity-85"
                 animate={{
@@ -133,8 +188,8 @@ export default function HallOfFameCard({ client }: HallOfFameCardProps) {
                 className="absolute left-1/2 top-1/2 h-[62%] w-[62%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/30"
               >
                 <div className="absolute inset-[14%] rounded-full border border-white/25" />
-                <div className="absolute left-1/2 top-[-10%] h-[120%] w-px -translate-x-1/2 bg-white/22" />
-                <div className="absolute left-[-10%] top-1/2 h-px w-[120%] -translate-y-1/2 bg-white/22" />
+                <div className="absolute left-1/2 top-[-10%] h-[120%] w-px -translate-x-1/2 bg-white/20" />
+                <div className="absolute left-[-10%] top-1/2 h-px w-[120%] -translate-y-1/2 bg-white/20" />
               </motion.div>
               <motion.div
                 animate={{ x: isHovering ? "8%" : "0%", opacity: isHovering ? 0.9 : 0.5 }}
@@ -154,7 +209,7 @@ export default function HallOfFameCard({ client }: HallOfFameCardProps) {
 
               <motion.div
                 style={{ y: mediaY }}
-                className="absolute inset-[-8%] flex items-center justify-center text-center text-[clamp(40px,7vw,96px)] font-[800] uppercase leading-none tracking-[-0.06em] text-white/18"
+                className="absolute inset-[-8%] flex items-center justify-center text-center text-[clamp(40px,7vw,96px)] font-[800] uppercase leading-none tracking-[-0.06em] text-white/20"
               >
                 {client.name}
               </motion.div>
@@ -165,13 +220,30 @@ export default function HallOfFameCard({ client }: HallOfFameCardProps) {
               >
                 Open case study
               </motion.div>
+              <motion.div
+                aria-hidden="true"
+                initial={false}
+                animate={
+                  isOpening
+                    ? { opacity: [0, 1, 0], scale: [0.78, 1.02, 1.18] }
+                    : { opacity: 0, scale: 0.78 }
+                }
+                transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
+                className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center bg-white/10 backdrop-blur-[2px]"
+              >
+                <div className="relative h-[42%] w-[42%] rounded-full border border-white/60">
+                  <div className="absolute left-1/2 top-[-32%] h-[164%] w-px -translate-x-1/2 bg-white/40" />
+                  <div className="absolute left-[-32%] top-1/2 h-px w-[164%] -translate-y-1/2 bg-white/40" />
+                  <div className="absolute inset-[24%] rounded-full border border-white/40" />
+                </div>
+              </motion.div>
             </motion.div>
           </div>
 
           <h3 className="mt-4 text-[20px] font-normal tracking-[-0.02em] text-[#1D1D1F] dark:text-white">
             {client.name}
           </h3>
-          <p className="mt-[6px] max-w-[30ch] text-[13px] leading-[1.6] text-[#475569] dark:text-white/72">
+          <p className="mt-[6px] max-w-[30ch] text-[13px] leading-[1.6] text-[#475569] dark:text-white/70">
             {client.description}
           </p>
           </Link>

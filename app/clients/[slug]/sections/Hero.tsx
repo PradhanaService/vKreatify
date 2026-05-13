@@ -102,7 +102,7 @@ function NoizeHero({ client }: HeroProps) {
         </motion.p>
       </div>
 
-      <div className="absolute bottom-24 left-0 right-0 overflow-hidden border-y border-white/15 py-4 text-[14px] uppercase tracking-[0.26em] text-white/58">
+      <div className="absolute bottom-24 left-0 right-0 overflow-hidden border-y border-white/20 py-4 text-[14px] uppercase tracking-[0.26em] text-white/60">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
@@ -273,7 +273,7 @@ function EdTechHero({ client }: HeroProps) {
           {client.name}
         </h1>
         <div className="mx-auto mt-8 h-px w-[60px] bg-white/40" />
-        <p className="mx-auto mt-8 max-w-2xl text-[18px] font-[300] leading-8 text-white/68">
+        <p className="mx-auto mt-8 max-w-2xl text-[18px] font-[300] leading-8 text-white/70">
           {client.tagline}
         </p>
       </motion.div>

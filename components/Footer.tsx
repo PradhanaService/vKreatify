@@ -18,10 +18,10 @@ export default function Footer() {
             </span>
             <span className="text-[13px] text-[#1D1D1F] dark:text-white">Available for projects</span>
           </div>
-          <p className="text-[15px] font-medium tracking-[-0.03em] text-[#374151] dark:text-white/78">
+          <p className="text-[15px] font-medium tracking-[-0.03em] text-[#374151] dark:text-white/80">
             vKreatify
           </p>
-          <p className="max-w-md text-[13px] leading-6 text-[#475569] dark:text-white/74">
+          <p className="max-w-md text-[13px] leading-6 text-[#475569] dark:text-white/75">
             Thoughtful digital design, brand systems, and product experiences with a calm,
             premium feel.
           </p>
@@ -40,7 +40,7 @@ export default function Footer() {
             ))}
           </nav>
 
-          <p className="text-[12px] uppercase tracking-[0.14em] text-[#64748B] dark:text-white/68">
+          <p className="text-[12px] uppercase tracking-[0.14em] text-[#64748B] dark:text-white/70">
             &copy; 2026 vKreatify
           </p>
         </div>

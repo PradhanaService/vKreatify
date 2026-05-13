@@ -113,7 +113,7 @@ function MetricCard({
       <div className="mt-8 text-[56px] font-[200] leading-none tracking-[-0.03em]" style={{ color: accentColor }}>
         {formatMetric(count, metric.decimals, metric.suffix)}
       </div>
-      <p className="mt-4 max-w-[260px] text-[13px] leading-[1.6] text-white/78">{metric.label}</p>
+      <p className="mt-4 max-w-[260px] text-[13px] leading-[1.6] text-white/80">{metric.label}</p>
     </motion.div>
   );
 }
@@ -163,7 +163,7 @@ export default function MetricsDashboard({ client }: MetricsDashboardProps) {
           </div>
           <div className="mt-4 flex gap-4 md:gap-6">
             {["Jan", "Mar", "May", "Jul", "Sep"].map((month) => (
-              <span key={month} className="w-10 text-[10px] uppercase tracking-[0.15em] text-white/68 md:w-12">
+              <span key={month} className="w-10 text-[10px] uppercase tracking-[0.15em] text-white/70 md:w-12">
                 {month}
               </span>
             ))}

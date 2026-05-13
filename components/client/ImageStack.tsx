@@ -14,7 +14,7 @@ function stackTheme(client: Client) {
     case "noize":
       return {
         section: "bg-[#0D0D0D] text-white",
-        caption: "text-white/72",
+        caption: "text-white/70",
       };
     case "tattoo-collective":
       return {

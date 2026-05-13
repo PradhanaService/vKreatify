@@ -67,7 +67,7 @@ function StatBlock({ stat, index }: { stat: StatItem; index: number }) {
         {count}
         {stat.suffix ?? ""}
       </div>
-      <div className="mt-3 text-[13px] font-medium uppercase tracking-[0.1em] text-[#475569] dark:text-white/72">
+      <div className="mt-3 text-[13px] font-medium uppercase tracking-[0.1em] text-[#475569] dark:text-white/70">
         {stat.label}
       </div>
     </motion.div>

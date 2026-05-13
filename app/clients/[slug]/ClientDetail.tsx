@@ -24,6 +24,8 @@ export default function ClientDetail({ client, nextClient }: ClientDetailProps) 
   const { setCompany } = useCursorContext();
 
   useLayoutEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration;
+
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
@@ -37,6 +39,10 @@ export default function ClientDetail({ client, nextClient }: ClientDetailProps) 
     });
 
     return () => {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = previousScrollRestoration;
+      }
+
       window.cancelAnimationFrame(frame);
     };
   }, [client.slug]);

@@ -13,7 +13,7 @@ function getIntroTheme(client: Client) {
     case "noize":
       return {
         section: "bg-[#0D0D0D] text-white",
-        muted: "text-white/72",
+        muted: "text-white/70",
       };
     case "tattoo-collective":
       return {

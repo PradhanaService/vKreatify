@@ -22,9 +22,9 @@ function sectionTheme(client: Client) {
 function roleClass(client: Client) {
   switch (client.slug) {
     case "tattoo-collective":
-      return "text-white/76";
+      return "text-white/75";
     default:
-      return "text-[#4B5563] dark:text-white/76";
+      return "text-[#4B5563] dark:text-white/75";
   }
 }
 
@@ -41,9 +41,9 @@ export default function TestimonialQuote({ client }: TestimonialQuoteProps) {
 
       <motion.div
         ref={ref}
-        initial={false}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ opacity: 0, y: 54, filter: "blur(12px)" }}
+        animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: 54, filter: "blur(12px)" }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10 mx-auto max-w-5xl text-center"
       >
         <p className="mx-auto max-w-4xl text-[clamp(22px,3vw,36px)] font-[200] leading-[1.4] tracking-[-0.02em]">

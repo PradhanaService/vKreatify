@@ -37,7 +37,7 @@ export default function ClientNav({ clientName, clientSlug }: ClientNavProps) {
         isScrolled
           ? isDark
             ? "bg-black/70 backdrop-blur-xl"
-            : "bg-white/85 backdrop-blur-xl"
+            : "bg-white/90 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
@@ -49,15 +49,15 @@ export default function ClientNav({ clientName, clientSlug }: ClientNavProps) {
           }}
           className={`inline-flex items-center gap-3 rounded-[980px] px-4 py-2 text-[14px] backdrop-blur-xl transition-colors duration-200 ${
             isDark
-              ? "border border-white/15 bg-black/55 text-white hover:bg-white/10"
-              : "border border-black/10 bg-white/85 text-[#1D1D1F] hover:bg-[#F5F5F7]"
+              ? "border border-white/20 bg-black/55 text-white hover:bg-white/10"
+              : "border border-black/10 bg-white/90 text-[#1D1D1F] hover:bg-[#F5F5F7]"
           }`}
         >
           <span>&larr;</span>
           <span>All Work</span>
         </Link>
 
-        <p className={`text-[12px] uppercase tracking-[0.18em] ${isDark ? "text-white/55" : "text-[#1D1D1F]/55"}`}>
+        <p className={`text-[12px] uppercase tracking-[0.18em] ${isDark ? "text-white/60" : "text-[#1D1D1F]/55"}`}>
           {clientName}
         </p>
       </div>

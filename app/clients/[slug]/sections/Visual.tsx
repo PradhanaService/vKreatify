@@ -20,10 +20,10 @@ export default function Visual({ client }: VisualProps) {
 
   return (
     <section className="border-y border-black/5 bg-[#F5F5F7] px-[5vw] py-[120px] dark:border-white/10 dark:bg-[#111111]">
-      <div ref={ref} className="mx-auto max-w-[1700px]">
+      <div ref={ref} className="relative mx-auto max-w-[1700px]">
         <div className="mb-8 flex items-end justify-between gap-8">
           <div>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[#AEAEB2] dark:text-white/35">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#AEAEB2] dark:text-white/40">
               04 - Full Bleed Visual
             </p>
             <h2 className="mt-4 text-[clamp(32px,5vw,56px)] font-[200] tracking-[-0.03em] text-[#1D1D1F] dark:text-white">
@@ -48,7 +48,7 @@ export default function Visual({ client }: VisualProps) {
             {client.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-white/20 bg-white/15 px-3 py-[5px] text-[10px] uppercase tracking-[0.12em] text-white backdrop-blur-xl"
+                className="rounded-full border border-white/20 bg-white/20 px-3 py-[5px] text-[10px] uppercase tracking-[0.12em] text-white backdrop-blur-xl"
               >
                 {tag}
               </span>
@@ -57,8 +57,8 @@ export default function Visual({ client }: VisualProps) {
 
           <div className="absolute inset-0 z-10 flex items-center justify-center p-8">
             <div className="text-center">
-              <p className="text-[11px] uppercase tracking-[0.22em] text-white/65">Project Visual</p>
-              <h3 className="mt-5 text-[clamp(48px,8vw,110px)] font-[800] tracking-[-0.05em] text-white/12">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-white/70">Project Visual</p>
+              <h3 className="mt-5 text-[clamp(48px,8vw,110px)] font-[800] tracking-[-0.05em] text-white/10">
                 {client.name}
               </h3>
             </div>

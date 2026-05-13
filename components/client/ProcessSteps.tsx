@@ -14,9 +14,9 @@ function getProcessTheme(client: Client) {
     case "noize":
       return {
         section: "bg-[#0D0D0D] text-white",
-        border: "border-white/18",
-        number: "text-white/62",
-        body: "text-white/82",
+        border: "border-white/20",
+        number: "text-white/60",
+        body: "text-white/80",
       };
     case "tattoo-collective":
       return {
@@ -28,9 +28,9 @@ function getProcessTheme(client: Client) {
     default:
       return {
         section: "bg-[#0D0D0D] text-white",
-        border: "border-white/18",
-        number: "text-white/62",
-        body: "text-white/82",
+        border: "border-white/20",
+        number: "text-white/60",
+        body: "text-white/80",
       };
   }
 }

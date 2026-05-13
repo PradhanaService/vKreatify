@@ -109,7 +109,7 @@ function MetricCard({ accentColor, isInView, index, metric }: MetricCardProps) {
         {displayValue}
         {metric.suffix ?? ""}
       </div>
-      <p className="mt-6 text-[13px] leading-[1.6] text-white/78">{metric.label}</p>
+      <p className="mt-6 text-[13px] leading-[1.6] text-white/80">{metric.label}</p>
     </motion.div>
   );
 }
@@ -152,7 +152,7 @@ export default function MetricsDashboard({ client }: MetricsDashboardProps) {
               />
             ))}
           </div>
-          <div className="mt-3 flex gap-4 text-[10px] text-white/68">
+          <div className="mt-3 flex gap-4 text-[10px] text-white/70">
             {["Jan", "Mar", "May", "Jul", "Sep"].map((month) => (
               <span key={month} className="w-12 text-center">
                 {month}

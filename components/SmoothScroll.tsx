@@ -34,15 +34,18 @@ export default function SmoothScroll() {
       return;
     }
 
-    const jumpToTop = () => {
-      lenis.scrollTo(0, {
+    const jumpToTarget = () => {
+      const hash = window.location.hash.replace("#", "");
+      const target = hash ? document.getElementById(decodeURIComponent(hash)) : null;
+
+      lenis.scrollTo(target ?? 0, {
         immediate: true,
       });
     };
 
-    const frameOne = window.requestAnimationFrame(jumpToTop);
+    const frameOne = window.requestAnimationFrame(jumpToTarget);
     const frameTwo = window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(jumpToTop);
+      window.requestAnimationFrame(jumpToTarget);
     });
 
     return () => {
@@ -50,6 +53,26 @@ export default function SmoothScroll() {
       window.cancelAnimationFrame(frameTwo);
     };
   }, [pathname]);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const lenis = lenisRef.current;
+      const hash = window.location.hash.replace("#", "");
+      const target = hash ? document.getElementById(decodeURIComponent(hash)) : null;
+
+      if (lenis && target) {
+        lenis.scrollTo(target, {
+          immediate: false,
+        });
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
 
   useAnimationFrame((time) => {
     lenisRef.current?.raf(time);

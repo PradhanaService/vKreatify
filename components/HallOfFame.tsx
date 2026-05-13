@@ -36,12 +36,12 @@ export default function HallOfFame() {
         <Reveal className="flex items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <span className="h-[7px] w-[7px] bg-[#86868B] dark:bg-white/40" />
-            <span className="text-[11px] uppercase tracking-[0.15em] text-[#475569] dark:text-white/72">
+            <span className="text-[11px] uppercase tracking-[0.15em] text-[#475569] dark:text-white/70">
               Recent Launches
             </span>
           </div>
 
-          <span className="text-right text-[11px] uppercase tracking-[0.15em] text-[#475569] dark:text-white/72">
+          <span className="text-right text-[11px] uppercase tracking-[0.15em] text-[#475569] dark:text-white/70">
             Work and engagements
           </span>
         </Reveal>
@@ -56,7 +56,7 @@ export default function HallOfFame() {
           <span className="mx-auto mt-3 block h-[10px] w-[10px] rounded-full bg-[#FFD700]" />
 
           <Reveal delay={0.15}>
-            <p className="mx-auto max-w-[600px] pt-8 text-center text-[17px] leading-[1.7] text-[#374151] dark:text-white/78">
+            <p className="mx-auto max-w-[600px] pt-8 text-center text-[17px] leading-[1.7] text-[#374151] dark:text-white/80">
             We strengthen your design and innovation capabilities through embedded specialist teams.
             From bold new ventures to global industry leaders, companies around the world trust us to
             deliver meaningful digital transformation.

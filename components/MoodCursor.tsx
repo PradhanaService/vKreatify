@@ -6,6 +6,9 @@ import { useCursorContext } from "../context/CursorContext";
 import { useThemeContext } from "../context/ThemeContext";
 
 type Position = { x: number; y: number };
+type ClickPulse = Position & {
+  id: number;
+};
 
 function usePointerMode() {
   const [isCoarse, setIsCoarse] = useState(true);
@@ -187,7 +190,16 @@ export default function MoodCursor() {
   const [ringPos, setRingPos] = useState({ x: 0, y: 0 });
   const [isClickable, setIsClickable] = useState(false);
   const [trail, setTrail] = useState<Position[]>([]);
+  const [clickPulses, setClickPulses] = useState<ClickPulse[]>([]);
   const isDark = theme === "dark";
+
+  useEffect(() => {
+    document.body.classList.toggle("vk-custom-cursor", Boolean(company) && !isCoarse);
+
+    return () => {
+      document.body.classList.remove("vk-custom-cursor");
+    };
+  }, [company, isCoarse]);
 
   useEffect(() => {
     if (isCoarse) return;
@@ -217,15 +229,48 @@ export default function MoodCursor() {
     let frame = 0;
     const animate = () => {
       setRingPos((prev) => ({
-        x: prev.x + (pos.x - prev.x) * 0.18,
-        y: prev.y + (pos.y - prev.y) * 0.18,
+        x: prev.x + (pos.x - prev.x) * 0.16,
+        y: prev.y + (pos.y - prev.y) * 0.16,
       }));
       frame = window.requestAnimationFrame(animate);
     };
 
     frame = window.requestAnimationFrame(animate);
-    return () => window.cancelAnimationFrame(frame);
-  }, [isCoarse, pos]);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, [isCoarse, pos.x, pos.y]);
+
+  useEffect(() => {
+    if (isCoarse) return;
+
+    const click = (event: PointerEvent) => {
+      if (event.button !== 0) {
+        return;
+      }
+
+      const target = event.target as HTMLElement | null;
+      const isInteractive = Boolean(target?.closest("a, button, [role='button'], input, textarea, select, label"));
+
+      if (!company && !isInteractive) {
+        return;
+      }
+
+      const id = Date.now() + Math.random();
+      setClickPulses((prev) => [...prev.slice(-5), { id, x: event.clientX, y: event.clientY }]);
+
+      window.setTimeout(() => {
+        setClickPulses((prev) => prev.filter((pulse) => pulse.id !== id));
+      }, 650);
+    };
+
+    window.addEventListener("pointerdown", click, { passive: true });
+
+    return () => {
+      window.removeEventListener("pointerdown", click);
+    };
+  }, [company, isCoarse]);
 
   if (isCoarse) {
     return null;
@@ -233,32 +278,33 @@ export default function MoodCursor() {
 
   return (
     <>
+      {clickPulses.map((pulse) => (
+        <motion.span
+          key={pulse.id}
+          initial={{ opacity: 0.42, scale: 0.32 }}
+          animate={{ opacity: 0, scale: 1.7 }}
+          transition={{ duration: 0.62, ease: [0.16, 1, 0.3, 1] }}
+          className={`pointer-events-none fixed z-[99997] h-9 w-9 rounded-full border ${
+            company ? "border-white/70" : isDark ? "border-white/50" : "border-[#0066CC]/55"
+          }`}
+          style={{ left: pulse.x, top: pulse.y, transform: "translate(-50%, -50%)" }}
+        />
+      ))}
+
       {!company ? (
-        <>
-          <div
-            className={`pointer-events-none fixed z-[99999] h-1.5 w-1.5 rounded-full ${isDark ? "bg-white" : "bg-[#1D1D1F]"}`}
-            style={{ left: pos.x, top: pos.y, transform: "translate(-50%, -50%)" }}
-          />
-          <motion.div
-            animate={
-              isClickable
-                ? {
-                    width: 48,
-                    height: 48,
-                    backgroundColor: isDark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.06)",
-                  }
-                : {
-                    width: 36,
-                    height: 36,
-                    backgroundColor: isDark ? "rgba(255,255,255,0)" : "rgba(0,0,0,0)",
-                  }
-            }
-            className={`pointer-events-none fixed z-[99998] rounded-full border ${
-              isDark ? "border-white/25" : "border-black/20"
-            }`}
-            style={{ left: ringPos.x, top: ringPos.y, transform: "translate(-50%, -50%)" }}
-          />
-        </>
+        <motion.span
+          aria-hidden="true"
+          animate={{
+            width: isClickable ? 32 : 24,
+            height: isClickable ? 32 : 24,
+            opacity: isClickable ? 0.42 : 0.24,
+          }}
+          transition={{ duration: 0.22, ease: "easeOut" }}
+          className={`pointer-events-none fixed z-[99996] rounded-full border ${
+            isDark ? "border-white" : "border-[#1D1D1F]"
+          }`}
+          style={{ left: ringPos.x, top: ringPos.y, transform: "translate(-50%, -50%)" }}
+        />
       ) : (
         <div
           className="pointer-events-none fixed z-[99999]"

@@ -21,6 +21,7 @@ type RevealProps = {
 
 export function Reveal({ children, className, delay = 0, once = true }: RevealProps) {
   const shouldReduceMotion = useReducedMotion();
+  const visibleState = { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", clipPath: "inset(0% 0% 0% 0%)" };
 
   return (
     <motion.div
@@ -29,11 +30,8 @@ export function Reveal({ children, className, delay = 0, once = true }: RevealPr
           ? false
           : { opacity: 0, y: 92, scale: 0.94, filter: "blur(18px)", clipPath: "inset(28% 0% 0% 0%)" }
       }
-      whileInView={
-        shouldReduceMotion
-          ? undefined
-          : { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", clipPath: "inset(0% 0% 0% 0%)" }
-      }
+      animate={shouldReduceMotion ? undefined : visibleState}
+      whileInView={shouldReduceMotion ? undefined : visibleState}
       viewport={{ once, margin: "-18% 0px -18% 0px" }}
       transition={{ duration: 1.05, ease: [0.16, 1, 0.3, 1], delay }}
       className={className}
@@ -56,30 +54,20 @@ export function SplitReveal({ children, as = "span", className, delay = 0 }: Spl
   const words = children.split(" ");
 
   return (
-    <Component
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
-      variants={{
-        hidden: {},
-        visible: {
-          transition: {
-            staggerChildren: shouldReduceMotion ? 0 : 0.045,
-            delayChildren: delay,
-          },
-        },
-      }}
-    >
+    <Component className={className}>
       {words.map((word, index) => (
         <span key={`${word}-${index}`} className="inline-block overflow-hidden align-bottom">
           <motion.span
             className="inline-block"
-            variants={{
-              hidden: shouldReduceMotion ? { opacity: 1 } : { y: "118%", rotate: 5, opacity: 0, filter: "blur(10px)" },
-              visible: { y: "0%", rotate: 0, opacity: 1, filter: "blur(0px)" },
+            initial={false}
+            animate={{ y: "0%", rotate: 0, opacity: 1, filter: "blur(0px)" }}
+            whileInView={{ y: "0%", rotate: 0, opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+            transition={{
+              duration: 1.05,
+              ease: [0.16, 1, 0.3, 1],
+              delay: shouldReduceMotion ? 0 : delay + index * 0.045,
             }}
-            transition={{ duration: 1.05, ease: [0.16, 1, 0.3, 1] }}
           >
             {word}
           </motion.span>
@@ -149,7 +137,7 @@ export function ParallaxLayer({ children, className, distance = 80, style }: Par
   const y = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [-distance, distance]);
 
   return (
-    <motion.div ref={ref} style={{ ...style, y }} className={className}>
+    <motion.div ref={ref} style={{ ...style, y }} className={`relative ${className ?? ""}`}>
       {children}
     </motion.div>
   );
@@ -306,7 +294,8 @@ export function StaggerChildren({ children, className }: { children: ReactNode; 
 
   return (
     <motion.div
-      initial="hidden"
+      initial={shouldReduceMotion ? false : "hidden"}
+      animate="visible"
       whileInView="visible"
       viewport={{ once: true, margin: "-12% 0px -12% 0px" }}
       variants={{
